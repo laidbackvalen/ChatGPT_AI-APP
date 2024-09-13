@@ -1,0 +1,16 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.ChatAISOL" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.ChatAISOL" parent="Base.Theme.ChatAISOL" />
+
+    <style name="CustomSearchView" parent="Widget.AppCompat.SearchView">
+        <!-- Customizations -->
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorHint">@color/white</item>
+        <item name="android:queryBackground">@android:color/transparent</item>
+    </style>
+</resources>

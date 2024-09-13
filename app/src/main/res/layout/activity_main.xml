@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="#1c1c1c"
+    tools:context=".views.activities.MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingClass">
+
+        <ImageView
+            android:id="@+id/moreDrawer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:contentDescription="More options"
+            android:padding="5dp"
+            android:src="@drawable/menu"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/inter_semibold"
+            android:gravity="center"
+            android:text="ChatAI SOL"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="#BAB9B9"
+            app:layout_constraintBottom_toBottomOf="@+id/moreDrawer"
+            app:layout_constraintStart_toEndOf="@+id/moreDrawer"
+            app:layout_constraintTop_toTopOf="@+id/moreDrawer" />
+
+        <ImageView
+            android:id="@+id/img_txtMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:contentDescription="Edit Message"
+            android:padding="5dp"
+            android:src="@drawable/edit_3_svgrepo_com"
+            app:layout_constraintBottom_toBottomOf="@+id/moreDrawer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/moreDrawer" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            android:fitsSystemWindows="true"
+            android:orientation="vertical"
+            android:scrollbars="none"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_semibold"
+                    android:gravity="center"
+                    android:text="Welcome To ChatAI SOL\nTry it now!"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@+id/recyclerView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/recyclerView" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:padding="10dp"
+                    app:layout_constraintBottom_toTopOf="@id/cardViewMain"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/cardViewMain"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/message_ed_txt_bg"
+                    android:fitsSystemWindows="true"
+                    android:padding="5dp"
+                    app:layout_constraintBottom_toTopOf="@id/textView3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/recyclerView" />
+
+                <EditText
+                    android:id="@+id/edit_txtMessage"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:autofillHints="none"
+                    android:background="@color/white"
+                    android:fontFamily="@font/inter_medium"
+                    android:hint="Message"
+                    android:maxLines="2"
+                    android:paddingStart="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="5dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    app:layout_constraintBottom_toBottomOf="@id/cardViewMain"
+                    app:layout_constraintEnd_toStartOf="@+id/img_BtnSend"
+                    app:layout_constraintHorizontal_weight="0.8"
+                    app:layout_constraintStart_toStartOf="@+id/cardViewMain"
+                    app:layout_constraintTop_toTopOf="@+id/cardViewMain" />
+
+                <ImageButton
+                    android:id="@+id/img_BtnSend"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/img_btn_bg_circular"
+                    android:contentDescription="Send Message"
+                    android:padding="5dp"
+                    android:src="@drawable/baseline_arrow_upward_24"
+                    app:layout_constraintBottom_toBottomOf="@id/edit_txtMessage"
+                    app:layout_constraintEnd_toEndOf="@+id/cardViewMain"
+                    app:layout_constraintHorizontal_weight="0.1"
+                    app:layout_constraintStart_toEndOf="@+id/edit_txtMessage"
+                    app:layout_constraintTop_toTopOf="@id/edit_txtMessage" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/inter"
+                    android:gravity="center"
+                    android:text="ChatAI SOL can make mistakes. Check important info."
+                    android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                    android:textColor="#BAB9B9"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cardViewMain" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_marginTop="30dp"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start">
+
+        <include
+            android:id="@+id/navMainDrawerLayout"
+            layout="@layout/main_drawer_layout"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.drawerlayout.widget.DrawerLayout>
